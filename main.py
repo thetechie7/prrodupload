@@ -1,10 +1,10 @@
+import urllib
 from simple_youtube_api.Channel import Channel
 from simple_youtube_api.LocalVideo import LocalVideo
-import urllib.request
 
 # loggin into the channel
 channel = Channel()
-channel.login("client_secret_692791888419-25kcgjfivl3mal9lgknbsspd15p6flfv.apps.googleusercontent.com.json", "credentials.storage")
+channel.login("desktop.json", "credentials.storage")
 
 urllib.request.urlretrieve("https://www.utdallas.edu/files/2022/10/B-1.mp4", "video.mp4")
 # setting up the video that is going to be uploaded
@@ -27,4 +27,3 @@ video.set_public_stats_viewable(True)
 # video.set_thumbnail_path('test_thumb.png')
 video = channel.upload_video(video)
 print(video.id)
-print(video)
